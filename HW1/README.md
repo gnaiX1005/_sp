@@ -1,3 +1,5 @@
+## [AI](https://gemini.google.com/share/71799895d8f6)
+
 ## 第一階段：編譯（Translation / Parsing）
 
 當你執行 `./my_compiler test.c` 時，程式會先進行翻譯工作，將高階語言轉化為**四元組 (Quadruples)**。
