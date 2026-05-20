@@ -1,0 +1,36 @@
+// EasyLang 範例：陣列操作
+// 展示陣列的建立、存取與修改
+
+func print_array(arr) {
+    i = 0;
+    len = len(arr);
+    print("[");
+    while (i < len) {
+        print(arr[i]);
+        if (i < len - 1) {
+            print(", ");
+        }
+        i = i + 1;
+    }
+    print("]");
+}
+
+func main() {
+    arr = [1, 2, 3, 4, 5];
+    print("原始陣列:");
+    print_array(arr);
+
+    push(arr, 6);
+    print("加入 6 後:");
+    print_array(arr);
+
+    pop(arr);
+    print("移除最後元素後:");
+    print_array(arr);
+
+    arr[0] = 99;
+    print("修改第一個元素為 99:");
+    print_array(arr);
+}
+
+main();

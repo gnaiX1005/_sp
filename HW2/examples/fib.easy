@@ -1,0 +1,20 @@
+// EasyLang 範例：費波那契數列
+// 展示遞迴函式與迴圈
+
+func fib(n) {
+    if (n <= 1) {
+        return n;
+    }
+    return fib(n - 1) + fib(n - 2);
+}
+
+func main() {
+    print("=== 費波那契數列 ===");
+    i = 0;
+    while (i <= 10) {
+        print("fib(", i, ") =", fib(i));
+        i = i + 1;
+    }
+}
+
+main();
