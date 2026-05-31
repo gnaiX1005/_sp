@@ -1,0 +1,24 @@
+print("=== for-in with range ===");
+for i in 0..5 {
+    print("i =", i);
+}
+
+print("=== range with step ===");
+for i in 0..10 {
+    if (i % 2 == 0) {
+        print(i, "is even");
+    }
+}
+
+print("=== sum using for-in ===");
+sum = 0;
+for x in 1..101 {
+    sum = sum + x;
+}
+print("sum 1..100 =", sum);
+
+print("=== iterate array ===");
+arr = [10, 20, 30, 40, 50];
+for val in arr {
+    print("val =", val);
+}

@@ -1,0 +1,31 @@
+print("=== File I/O demo ===");
+
+content = "Hello, EasyLang!\nThis is a test file.\nLine 3: systems programming\n";
+fh = fopen("/tmp/easylang_test.txt", "w");
+fputs(fh, content);
+fclose(fh);
+print("File written.");
+
+fh = fopen("/tmp/easylang_test.txt", "r");
+line = fgets(fh);
+while (line != null) {
+    print(">", line);
+    line = fgets(fh);
+}
+fclose(fh);
+
+print("=== String split and join ===");
+s = "apple,banana,cherry,date";
+parts = split(s, ",");
+print("split:");
+for p in parts {
+    print("  ", p);
+}
+joined = join(parts, " | ");
+print("joined:", joined);
+
+print("=== range() builtin ===");
+r = range(1, 11);
+for v in r {
+    print("v =", v);
+}

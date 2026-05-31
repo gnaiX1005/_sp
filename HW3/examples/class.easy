@@ -1,0 +1,70 @@
+print("=== Class system demo ===");
+
+class Point {
+    func init(x, y) {
+        self.x = x;
+        self.y = y;
+    }
+    func show() {
+        print("Point(", self.x, ",", self.y, ")");
+    }
+    func distance(other) {
+        dx = self.x - other.x;
+        dy = self.y - other.y;
+        return sqrt(dx * dx + dy * dy);
+    }
+}
+
+p1 = new Point(0, 0);
+p2 = new Point(3, 4);
+p1.show();
+p2.show();
+print("distance =", p1.distance(p2));
+
+print("=== Counter class ===");
+class Counter {
+    func init(start) {
+        self.count = start;
+    }
+    func inc() {
+        self.count = self.count + 1;
+    }
+    func get() {
+        return self.count;
+    }
+}
+
+c = new Counter(10);
+c.inc();
+c.inc();
+print("counter =", c.get());
+print("count attr =", c.count);
+
+print("=== BankAccount class ===");
+class BankAccount {
+    func init(owner, balance) {
+        self.owner = owner;
+        self.balance = balance;
+    }
+    func deposit(amount) {
+        self.balance = self.balance + amount;
+    }
+    func withdraw(amount) {
+        if (self.balance >= amount) {
+            self.balance = self.balance - amount;
+            return true;
+        }
+        return false;
+    }
+    func show() {
+        print(self.owner, "balance:", self.balance);
+    }
+}
+
+acct = new BankAccount("Alice", 1000);
+acct.show();
+acct.deposit(500);
+acct.show();
+ok = acct.withdraw(200);
+print("withdraw 200:", ok);
+acct.show();
